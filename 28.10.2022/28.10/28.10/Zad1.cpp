@@ -8,17 +8,22 @@ int main() {
 	int num;
 	cout << "Enter the price of product then selling price to check the income." << endl;
 	cin >> pprice >> sprice;
-	if (pprice > 0 and sprice > 0 and pprice <= sprice ) {
+	if (pprice > 0 and sprice > 0) {
 		num = sprice - pprice;
 		if (num > 0) {
 			cout << "The income is " << num << endl;
 		}
 		else {
-			cout << "The loss is " << -num << endl;
+			if (pprice > sprice) {
+				cout << "The loss is " << -num << endl;
+			}
+			else {
+				cout << "There is no income or loss." << endl;
+			}
 		}
 	}
 	else {
-		cout << "One of the numbers is either negative or price of product is smaller than selling price";
+		cout << "One of the numbers is negative.";
 	}
 	return 0;
 }
